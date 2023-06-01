@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Style TargetType="Label" x:Key="ResultLabel">
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="VerticalTextAlignment" Value="End"/>
+                <Setter Property="FontSize" Value="60"/>
+                <Setter Property="TextColor" Value="#1C72EF"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="OperatorButton">
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BackgroundColor" Value="#FFB300"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="NumericButton">
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="EqualButton">
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BackgroundColor" Value="#96CA2E"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <ControlTemplate x:Key="Footer">
+                <FlexLayout Padding="10,0"
+                    JustifyContent="SpaceBetween"
+                    AlignItems="Center"
+                    BackgroundColor="White">
+                    <Label Text="Ⓒ JAC Soft"/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Contact Us"
+                                      TextColor="Blue"
+                                      TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.johnabbott.qc.ca/career-programs/computer-science-technology/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </FlexLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ * Name: Hieu Dao Le Duc
+ * ID: 1924891
+ * Assignment 1
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorApp.MainPage"
+             xmlns:local="clr-namespace:CalculatorApp.Enums" 
+             xmlns:models="clr-namespace:CalculatorApp.Models" 
+             x:DataType="models:Calculator">
+
+    <Grid BackgroundColor="#354242">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Padding="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="resultLabel" Text="{Binding MathExpression}"
+                    Grid.ColumnSpan="4"
+                    Style="{StaticResource ResultLabel}"/>
+
+            <Button Text="{Binding SwitchSignNotation}"
+                    Grid.Row="1"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnSignButtonClicked"/>
+            <Button Text="{Binding PercentNotation}"
+                    Grid.Row="1" Grid.Column="1"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnPercentButtonClicked"/>
+            <Button Text="{Binding Source={x:Static local:ActionButtonTexts.Clear}}"
+                    Grid.Row="1" Grid.Column="2"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnClearButtonClicked"/>
+            <Button Text="{Binding Source={x:Static local:ActionButtonTexts.Backspace}}"
+                    Grid.Row="1" Grid.Column="3"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnBackspaceButtonClicked"/>
+
+            <Button Text="7"
+                    Grid.Row="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="8"
+                    Grid.Row="2" Grid.Column="1"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="9"
+                    Grid.Row="2" Grid.Column="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="{Binding DivideNotation}"
+                    Grid.Row="2" Grid.Column="3"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnDivideButtonClicked"/>
+
+            <Button Text="4"
+                    Grid.Row="3"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="5"
+                    Grid.Row="3" Grid.Column="1"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="6"
+                    Grid.Row="3" Grid.Column="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="{Binding MultiplyNotation}"
+                    Grid.Row="3" Grid.Column="3"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnMultiplyButtonClicked"/>
+
+            <Button Text="1"
+                    Grid.Row="4"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="2"
+                    Grid.Row="4" Grid.Column="1"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="3"
+                    Grid.Row="4" Grid.Column="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="{Binding SubstractNotation}"
+                    Grid.Row="4" Grid.Column="3"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnSubstractButtonClicked"/>
+
+            <Button Text="0"
+                    Grid.Row="5" Grid.ColumnSpan="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnNumericButtonClicked"/>
+            <Button Text="{Binding DecimalPointNotation}"
+                    Grid.Row="5" Grid.Column="2"
+                    Style="{StaticResource NumericButton}"
+                    Clicked="OnDecimalPointButtonClicked"/>
+            <Button Text="{Binding AddNotation}"
+                    Grid.Row="5" Grid.Column="3"
+                    Style="{StaticResource OperatorButton}"
+                    Clicked="OnAddButtonClicked"/>
+
+            <Button Text="{Binding Source={x:Static local:ActionButtonTexts.Equal}}"
+                    Grid.Row="6" Grid.ColumnSpan="4"
+                    Style="{StaticResource EqualButton}"
+                    Clicked="OnEqualButtonClicked"/>
+        </Grid>
+
+        <ContentView ControlTemplate="{StaticResource Footer}"
+                     Grid.Row="1"/>
+    </Grid>
+   
+</ContentPage>
